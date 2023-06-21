@@ -96,14 +96,14 @@ function App() {
       const time = weatherData.current_weather.time;
       const temperature = weatherData.current_weather.temperature;
 
-      // console.log(
-      //   "weatherCode",
-      //   weatherCode,
-      //   "time",
-      //   time,
-      //   "temperature",
-      //   temperature
-      // );
+      console.log(
+        "weatherCode",
+        weatherCode,
+        "time",
+        time,
+        "temperature",
+        temperature
+      );
 
       let weatherState = "It's a ";
 
@@ -186,7 +186,7 @@ function App() {
       }
 
       // determine the food
-      let food = "";
+      let food = "chicken";
       if (weather === Weather.CLEAR) {
         if (currentTemp === Temperature.COLD) {
           if (mealType === MealType.BREAKFAST) {
@@ -257,7 +257,7 @@ function App() {
         }
       }
 
-      // console.log(food);
+      console.log(food);
 
       // get the recipes
       const recipesResponse = await fetch(
@@ -308,7 +308,6 @@ function App() {
       }
 
       setRecipes(recipeList);
-      console.log(recipeList);
     },
   });
 
@@ -405,15 +404,17 @@ function App() {
             <div className="mb-4" />
 
             <div className="text-h5">
-              Here are some {mealType} recipes to lighten the day!
+              Here are some {mealType} recipes to{" "}
+              {currentTemp == Temperature.HOT ? "cool you down" : "warm you up"}
+              !
             </div>
 
             <div className="mb-4" />
 
-            <div className="flex flex-col flex-wrap justify-center">
+            <div className="flex flex-col flex-wrap">
               {recipes.map((recipe, idx) => (
                 <div key={idx}>
-                  <div className="flex items-center rounded-md border-secondary border-2 px-6 py-4">
+                  <div className="flex rounded-md border-secondary border-2 px-6 py-4">
                     <img
                       className="rounded-md w-32 h-32"
                       src={recipe.imageUrl}
