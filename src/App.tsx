@@ -405,7 +405,9 @@ function App() {
 
             <div className="text-h5">
               Here are some {mealType} recipes to{" "}
-              {currentTemp == Temperature.HOT ? "cool you down" : "warm you up"}
+              {currentTemp === Temperature.HOT
+                ? "cool you down"
+                : "warm you up"}
               !
             </div>
 
