@@ -430,9 +430,11 @@ function App() {
                         {Math.floor(recipe.calories) + " "} kcal
                       </div>
                       <div className="text-p">Servings: {recipe.servings}</div>
-                      <div className="text-p">
-                        Prep time: {recipe.prepTime} minutes
-                      </div>
+                      {recipe.prepTime !== 0 && (
+                        <div className="text-p">
+                          Prep time: {recipe.prepTime} minutes
+                        </div>
+                      )}
                       <p className="text-p text-gray-500 italic">
                         Source: {recipe.sourceWebsite}
                       </p>
