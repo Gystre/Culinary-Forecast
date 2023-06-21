@@ -29,14 +29,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#82AAE3",
-        secondary: "#91D8E4",
-        black: "#232527",
-        black75: "#57585a",
-        black50: "#8c8d8f",
-        black25: "#c0c0c1",
-        black10: "#e0e1e1",
-        black5: "#eaeaea",
+        primary: "#FEE001",
+        secondary: "#FFBB00",
+        black: "#171714",
+        black75: "#4e4e4c",
+        // black50: "#8c8d8f",
+        // black25: "#c0c0c1",
+        // black10: "#e0e1e1",
+        black5: "#e9e9e9",
       },
       animation: {
         bounceSlow: "bounceSlow 2s infinite",
